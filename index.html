@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Resize - Image</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./index.html">Resize Image</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./index.html">Home</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <div class="form-group">
+                        <form>
+                            <label for="image">Upload Image: </label>
+                            <input type="file" class="form-control-file" id="image" accept="image/*">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div id="modify" hidden>
+                <div class="row no-gutters mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label for="height" class="col-sm-4 col-form-label">Height: </label>
+                            <div class="col-sm-8">
+                                <input type="number" min="1" class="form-control" id="height" placeholder="Height">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label for="width" class="col-sm-4 col-form-label">Width: </label>
+                            <div class="col-sm-8">
+                                <input type="number" min="1" class="form-control" id="width" placeholder="Width">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-warning form-control" id="resize">Resize</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <div style="max-height: 512px;max-width:512px;overflow: scroll;">
+                                    <canvas id="inCanvas" class="mt-3" style="border: 2px solid black;"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6" hidden id="download">
+                                <div style="max-height: 512px;max-width:512px;overflow: scroll;">
+                                    <canvas id="outCanvas" class="mt-3" style="border: 2px solid black;"></canvas>
+                                </div>
+                                <div class="row">
+                                    <button class="btn btn-success form-control">Download Image</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="./opencv.js" type="text/javascript"></script>
+        <script src="./index.js" type="text/javascript"></script>
+    </body>
+</html>
